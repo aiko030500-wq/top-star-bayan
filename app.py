@@ -154,8 +154,14 @@ elif section == "AI-Chat Bayan":
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "Ты — AI Bayan, доброжелательный учитель английского языка для учеников 4 класса Казахстана. Объясняй просто и дружелюбно."},
-                    *st.session_state.chat_history
+                    {
+                        "role": "system",
+                        "content": (
+                            "Ты — AI Bayan, доброжелательный учитель английского языка "
+                            "для учеников 4 класса Казахстана. Объясняй просто и дружелюбно."
+                        ),
+                    },
+                    *st.session_state.chat_history,
                 ],
             )
             reply = response.choices[0].message.content
@@ -165,6 +171,5 @@ elif section == "AI-Chat Bayan":
         # 5️⃣ Вывод ответа
         with st.chat_message("assistant"):
             st.markdown(reply)
-        st.session_state.chat_history.append({"role": "assistant", "content": reply})
 
-            st.warning("Please enter your message first.")
+        st.session_state.chat_history.append({"role": "assistant", "content": reply})
