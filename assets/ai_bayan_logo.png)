@@ -1,1 +1,7 @@
-"assets/ai_bayan_logo.png"
+top-star-bayan/
+ ┣ app.py
+ ┣ requirements.txt
+ ┣ assets/
+ ┃ ┗ ai_bayan_logo.png   ✅  ← этот файл должен быть здесь!
+ ┗ data/
+   ┗ curriculum.json
