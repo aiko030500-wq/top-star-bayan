@@ -1,8 +1,8 @@
 
 import json, random, pathlib, time
 import streamlit as st
-
-st.set_page_config(page_title="AI Bayan for TS — Smart English Trainer"
+st.title("🤖 AI Bayan for TS — Smart English Buddy")
+st.write("Learn English with AI Bayan — your interactive and friendly trainer for TOP STAR students 🇰🇿")
 DATA_PATH = pathlib.Path(__file__).parent / "data" / "curriculum.json"
 LOGO_PATH = pathlib.Path(__file__).parent / "assets" / "logo.svg"
 
