@@ -1,0 +1,48 @@
+{
+  "units": [
+    {
+      "id": 1,
+      "title_en": "Me and My Friends",
+      "title_ru": "Я и мои друзья",
+      "vocabulary": [
+        {"word": "friend", "translation": "друг", "example": "My best friend is Ayan."},
+        {"word": "classmate", "translation": "одноклассник", "example": "I help my classmate."},
+        {"word": "kind", "translation": "добрый", "example": "She is kind and funny."},
+        {"word": "hobby", "translation": "хобби", "example": "My hobby is drawing."},
+        {"word": "play", "translation": "играть", "example": "We play together after school."}
+      ],
+      "grammar": {
+        "topic": "Present Simple (I/You/We/They + V; He/She/It + V-s)",
+        "exercises": [
+          {"question": "He ___ (play) football every day.", "answer": "plays"},
+          {"question": "I ___ (have) a kind friend.", "answer": "have"},
+          {"question": "She ___ (like) music.", "answer": "likes"},
+          {"question": "They ___ (help) me.", "answer": "help"}
+        ]
+      },
+      "reading": {
+        "text_en": "Aruzhan has many friends at school. They like drawing and playing games together.",
+        "text_ru": "Аружан имеет много друзей в школе. Им нравится рисовать и играть вместе.",
+        "questions": [
+          {"q": "Who has many friends?", "a": "Aruzhan"},
+          {"q": "What do they like doing?", "a": "drawing and playing games"}
+        ]
+      },
+      "listening": {
+        "script_en": "Hello! My name is Bayan. My friend is kind and smart. We play chess after school.",
+        "script_ru": "Привет! Меня зовут Баян. Мой друг добрый и умный. Мы играем в шахматы после школы.",
+        "questions": [
+          {"q": "What do Bayan and his friend play?", "a": "chess"}
+        ]
+      },
+      "speaking_prompts": [
+        "Describe your best friend (name, age, hobby).",
+        "What do you do together after school?"
+      ],
+      "writing_tasks": [
+        "Write 3 sentences about your best friend.",
+        "Write a short postcard to your friend."
+      ]
+    }
+  ]
+}
