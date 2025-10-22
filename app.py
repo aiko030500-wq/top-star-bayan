@@ -10,7 +10,8 @@ st.set_page_config(page_title=APP_NAME, page_icon="⭐", layout="wide")
 
 # ---- Sidebar (logo + profile) ----
 with open(LOGO_PATH, "r", encoding="utf-8") as f:
-    st.sidebar.image(f.read(), use_container_width=True)
+    svg_logo = f.read()
+st.sidebar.markdown(svg_logo, unsafe_allow_html=True)
 
 st.sidebar.markdown("## 👤 Student Profile")
 student_name = st.sidebar.text_input("Введите своё имя / Enter your name:", value="")
