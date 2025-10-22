@@ -5,7 +5,7 @@ st.title("👧 AI Bayan for TS — Smart English Trainer")
 st.write("Learn English with AI Bayan — your interactive and friendly trainer for TS students 🇰🇿")
 DATA_PATH = pathlib.Path(__file__).parent / "data" / "curriculum.json"
 LOGO_PATH = "assets/ai_bayan_logo.png"
-
+APP_NAME = "AI Bayan for TS — Smart English Trainer"
 st.set_page_config(page_title=APP_NAME, page_icon="⭐", layout="wide")
 
 # ---- Sidebar (logo + profile) ----
