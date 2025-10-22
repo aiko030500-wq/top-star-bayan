@@ -1,6 +1,6 @@
-# TOP STAR Bayan — English Trainer for Kids
+# AR Bayan — English Trainer for Kids TST
 
-Веб‑приложение для 4 класса по мотивам учебника **TOP STAR for Kazakhstan**.
+Веб‑приложение для 4 класса по мотивам учебника **TST for Kazakhstan**.
 Разделы: Vocabulary, Grammar, Reading, Listening, Speaking, Writing, Games, Progress.
 
 ## 🚀 Запуск
