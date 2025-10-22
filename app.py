@@ -11,9 +11,12 @@ st.set_page_config(page_title=APP_NAME, page_icon="🤖", layout="wide")
 # ===============================
 # LOGO AND HEADER
 # ===============================
-LOGO_PATH = "assets/ai_bayan_logo.png"
+LOGO_URL = "https://raw.githubusercontent.com/aiko030500-wq/top-star-bayan/main/assets/ai_bayan_logo.png"
 
-st.sidebar.image(LOGO_PATH, use_container_width=True)
+try:
+    st.sidebar.image(LOGO_URL, use_container_width=True)
+except Exception as e:
+    st.sidebar.warning("⚠️ Couldn't load logo from GitHub URL.")
 st.sidebar.title("👧 AI Bayan for TS")
 st.sidebar.markdown("Smart English Trainer for students in Kazakhstan 🇰🇿")
 
