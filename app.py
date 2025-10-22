@@ -122,23 +122,49 @@ elif section == "Progress":
 # AI-CHAT BAYAN SECTION
 # ===============================
 elif section == "AI-Chat Bayan":
-    st.header("🤖 AI-Chat Bayan — Ask and Learn")
+    from openai import OpenAI
 
-    user_input = st.text_input("Type your question or answer in English:")
+    st.header("🤖 AI Bayan — твой умный ассистент по английскому!")
 
-    if st.button("Ask Bayan"):
-        if user_input.strip():
-            try:
-                openai.api_key = st.secrets["OPENAI_API_KEY"]
-                response = openai.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": "You are Bayan, a kind and patient English teacher for 4th grade students in Kazakhstan. Speak simply and clearly."},
-                        {"role": "user", "content": user_input}
-                    ]
-                )
-                st.success(response.choices[0].message.content)
-            except Exception as e:
-                st.error("⚠️ Error: " + str(e))
-        else:
+    # 1️⃣ Инициализация клиента OpenAI
+    try:
+        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    except Exception as e:
+        st.error("❌ Не удалось подключиться к OpenAI. Проверь API-ключ в настройках Streamlit.")
+        st.stop()
+
+    # 2️⃣ Поле ввода
+    user_input = st.chat_input("💬 Напиши свой вопрос по английскому языку...")
+
+    # 3️⃣ Отображаем историю сообщений
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
+
+    for msg in st.session_state.chat_history:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+
+    # 4️⃣ Обработка нового вопроса
+    if user_input:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "Ты — AI Bayan, доброжелательный учитель английского языка для учеников 4 класса Казахстана. Объясняй просто и дружелюбно."},
+                    *st.session_state.chat_history
+                ],
+            )
+            reply = response.choices[0].message.content
+        except Exception as e:
+            reply = f"⚠️ Ошибка при обращении к OpenAI: {e}"
+
+        # 5️⃣ Вывод ответа
+        with st.chat_message("assistant"):
+            st.markdown(reply)
+        st.session_state.chat_history.append({"role": "assistant", "content": reply})
+
             st.warning("Please enter your message first.")
