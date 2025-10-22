@@ -1,1 +1,6 @@
-ChatGPT Image 23 окт. 2025 г., 01_32_44.png
+LOGO_URL = "https://raw.githubusercontent.com/aiko030500-wq/top-star-bayan/main/assets/ai_bayan_logo.png"
+
+try:
+    st.sidebar.image(LOGO_URL, use_container_width=True)
+except Exception as e:
+    st.sidebar.warning("⚠️ Couldn't load logo. Please check the image URL.")
