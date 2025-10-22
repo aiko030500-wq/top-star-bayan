@@ -1,7 +1,0 @@
-top-star-bayan/
- ┣ app.py
- ┣ requirements.txt
- ┣ assets/
- ┃ ┗ ai_bayan_logo.png   ai_bayan_logo.png 
- ┗ data/
-   ┗ curriculum.json
