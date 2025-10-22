@@ -1,6 +1,11 @@
-
+st.set_page_config(page_title=APP_NAME, page_icon="🤖", layout="wide")
 import json, random, pathlib, time
 import streamlit as st
+import json
+import openai
+
+APP_NAME = "AI Bayan for TS — Smart English Trainer"
+
 st.title("👧 AI Bayan for TS — Smart English Trainer")
 st.write("Learn English with AI Bayan — your interactive and friendly trainer for TS students 🇰🇿")
 DATA_PATH = pathlib.Path(__file__).parent / "data" / "curriculum.json"
